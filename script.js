@@ -48,16 +48,26 @@ form.addEventListener("submit", (e) => {
   let history = JSON.parse(localStorage.getItem("searchHistory")) || [];
   console.log("History: ",history); // debug log of stored search history
 
-  // Only add unique terms to the history array
-  if(!history.includes(query)){
-    history.push({
-      query: query, // the search query text
-      time: Date.now() // timestamp for when the search occurred
-    });
-    // Store the updated history back in localStorage
-    localStorage.setItem("searchHistory",JSON.stringify(history));
-  }
+  // Normalize history entries to objects {query, time}
+  history = history.map(h => (typeof h === 'string') ? { query: h, time: 0 } : h);
+  // Remove any existing entries for this query (case-insensitive) so newest appears first
+  history = history.filter(h => h.query.toLowerCase() !== query.toLowerCase());
+
+  // Insert newest at the front and keep only the latest 20
+  history.unshift({ query: query, time: Date.now() });
+  history = history.slice(0, 20);
+
+  // Store the updated history back in localStorage
+  localStorage.setItem("searchHistory",JSON.stringify(history));
 
   // Navigate to the search results page, encoding the query into the URL
   window.location.href = `search.html?search=${encodeURIComponent(query)}`;
 });
+
+// small enhancement: wire the "View History" button (if present) to open the history view
+const viewHistoryBtn = document.getElementById('view-history-button');
+if(viewHistoryBtn){
+  viewHistoryBtn.addEventListener('click', () => {
+    window.location.href = 'history.html';
+  });
+}

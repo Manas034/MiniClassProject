@@ -16,10 +16,12 @@
             <!-- Text input where users type their search query -->
             <input type="text" id="search-bar" name="search" placeholder="Search products..." />
         </div>
-        <!-- Wrapper for the submit button -->
-        <div class="search-element">
+        <!-- Wrapper for the submit button and actions -->
+        <div class="search-element" style="display:flex;gap:8px;align-items:center;">
             <!-- Button that submits the form to trigger the search -->
-            <button type="submit">Search</button>
+            <button type="submit" class="btn search-btn">Search</button>
+            <!-- Button to view search history; type=button avoids submitting the form -->
+            <button type="button" id="view-history-button" class="btn">View History</button>
         </div>
     </form>
 
