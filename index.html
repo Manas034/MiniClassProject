@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link href="./style.css" rel="stylesheet">
+</head>
+<body>
+    <h2 class="heading">Product Store</h2>
+
+    <!-- Search form: submitting this will perform a product search -->
+    <form id="search-form">
+        <!-- Wrapper for the search input element -->
+        <div class="search-element">
+            <!-- Text input where users type their search query -->
+            <input type="text" id="search-bar" name="search" placeholder="Search products..." />
+        </div>
+        <!-- Wrapper for the submit button -->
+        <div class="search-element">
+            <!-- Button that submits the form to trigger the search -->
+            <button type="submit">Search</button>
+        </div>
+    </form>
+
+    <!-- Suggestions container for autocomplete results (populated by JavaScript) -->
+    <div id="suggestions"></div>
+
+    <!-- Section where product cards will be injected by JavaScript -->
+    <section id="product-section"></section>
+
+    <script src="./script.js"></script>
+</body>
+</html>
