@@ -16,7 +16,11 @@
 
   <!-- Header for recent searches and clear button -->
   <div class="history-header" style="max-width:720px;margin:8px auto;padding:0 12px;display:flex;justify-content:space-between;align-items:center;">
-    <strong>Recent searches</strong>
+    <div>
+      <strong id="header-title">Recent searches</strong>
+      <!-- Button toggles between showing searches and viewed products -->
+      <button id="view-products-button" class="btn" style="margin-left:12px;">View Viewed Products</button>
+    </div>
     <button id="clear-history" class="clear-btn">Clear</button>
   </div>
 
