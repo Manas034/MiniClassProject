@@ -1,36 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Product Details</title>
-  <link href="./style.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - FakeStore</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/product.css">
 </head>
 <body>
-  <header class="page-header">
-    <div class="header-inner">
-      <h2 class="heading">Product Details</h2>
-      <a href="index.html" class="btn" style="position:absolute; left:12px;">Back</a>
-    </div>
-  </header>
-
-  <main style="max-width:900px;margin:18px auto;padding:12px;">
-    <section id="product-card" class="product-details">
-      <img id="product-image" src="" alt="product image" class="product-detail-img">
-      <div class="product-detail-info">
-        <h1 id="product-title">Loading...</h1>
-        <p id="product-price"></p>
-        <p id="product-description"></p>
-
-        <ul id="product-details-list"></ul>
-
-        <div style="margin-top:12px;">
-          <button id="add-to-cart-detail" class="btn">Add to cart</button>
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">FakeStore</a>
+            <p class="tagline">Product Details</p>
         </div>
-      </div>
-    </section>
-  </main>
+    </header>
+    <div class="container">
+        <button id="backBtn" onclick="window.location.href='index.html'">← Back to Products</button>
+        <div id="productDetail" class="product-detail">
+            <p class="loading">Loading product details...</p>
+        </div>
+    </div>
 
-  <script src="product.js"></script>
+    <script src="js/product.js"></script>
 </body>
 </html>

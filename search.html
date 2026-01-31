@@ -3,23 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Results</title>
-    <link href="./style.css" rel="stylesheet">
+    <title>Search Results - FakeStore</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h2 class="heading">Search Results</h2>
-
-    <form id="search-form">
-        <div class="search-element">
-            <input type="text" id="search-bar" name="search" placeholder="Search products..." />
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">FakeStore</a>
+            <p class="tagline" id="searchQuery"></p>
         </div>
-        <div class="search-element">
-            <button type="submit">Search</button>
+    </header>
+    <div class="container">
+        <button id="backBtn" onclick="window.location.href='index.html'">← Back to Home</button>
+        <div id="products" class="products">
+            <p class="loading">Loading...</p>
         </div>
-    </form>
+    </div>
 
-    <section id="product-section"></section>
-
-    <script src="./search.js"></script>
+    <script src="js/search.js"></script>
 </body>
 </html>
